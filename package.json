@@ -1,0 +1,29 @@
+{
+  "name": "@fabric/dashboard",
+  "version": "0.1.0",
+  "description": "General statistics from the Fabric network.",
+  "main": "services/fabric.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martindale/fabric-dashboard.git"
+  },
+  "keywords": [
+    "fabric",
+    "bitcoin",
+    "lightning",
+    "analytics"
+  ],
+  "author": "Fabric Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martindale/fabric-dashboard/issues"
+  },
+  "homepage": "https://github.com/martindale/fabric-dashboard#readme",
+  "dependencies": {
+    "@fabric/core": "FabricLabs/fabric#master",
+    "@fabric/http": "FabricLabs/fabric-http#master"
+  }
+}
