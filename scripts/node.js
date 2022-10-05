@@ -20,7 +20,7 @@ async function main (input = {}) {
 }
 
 main(settings).catch((exception) => {
-  console.error('[FEED:NODE]', 'Main Process Exception:', exception);
+  console.error('[DASHBOARD:NODE]', 'Main Process Exception:', exception);
 }).then((output) => {
-  console.log('[FEED:NODE]', 'Main Process Output:', output);
+  console.log('[DASHBOARD:NODE]', 'Main Process Output:', output);
 });
