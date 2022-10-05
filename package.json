@@ -4,7 +4,17 @@
   "description": "General statistics from the Fabric network.",
   "main": "services/fabric.js",
   "scripts": {
-    "test": "mocha tests"
+    "build": "npm run build:semantic && npm run build:browser",
+    "build:browser": "rollup -c",
+    "build:semantic": "cd libraries/fomantic && npx gulp build && cp -r dist/themes ../../assets && cd ../..",
+    "dev": "npx concurrently \"npm run watch\" \"npm start\"",
+    "coverage": "nyc npm test",
+    "make:coverage": "npm run coverage && nyc report --reporter html",
+    "review:coverage": "npm run make:coverage && http-server -p 8000 reports/coverage",
+    "serve": "http-server assets",
+    "start": "node scripts/node.js",
+    "test": "mocha tests",
+    "watch": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -24,6 +34,16 @@
   "homepage": "https://github.com/FabricLabs/fabric-dashboard#readme",
   "dependencies": {
     "@fabric/core": "FabricLabs/fabric#master",
-    "@fabric/http": "FabricLabs/fabric-http#master"
+    "@fabric/http": "FabricLabs/fabric-http#feature/dashboard"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "7.18.6",
+    "@rollup/plugin-babel": "5.3.1",
+    "@rollup/plugin-commonjs": "22.0.2",
+    "@rollup/plugin-json": "4.1.0",
+    "@rollup/plugin-node-resolve": "14.1.0",
+    "@rollup/plugin-replace": "4.0.0",
+    "@rollup/plugin-url": "7.0.0",
+    "rollup-plugin-import-css": "3.0.3"
   }
 }
