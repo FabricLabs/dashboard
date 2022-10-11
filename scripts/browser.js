@@ -19,7 +19,7 @@ const settings = {
 
 // Main Process Definition
 async function main (input = {}) {
-  const container = document.getElementById('feed');
+  const container = document.getElementById('fabric-container');
   const root = createRoot(container);
 
   root.render(<Dashboard state={input} />);
