@@ -9,12 +9,7 @@ import Dashboard from '../components/Dashboard';
 
 // Settings
 const settings = {
-  currency: 'USD',
-  symbols: [
-    'BTC',
-    'LTC',
-    'NMC'
-  ]
+  currency: 'BTC'
 };
 
 // Main Process Definition
@@ -31,7 +26,7 @@ async function main (input = {}) {
 
 // Run Main Process
 main(settings).catch((exception) => {
-  console.error('[PORTAL:FEED] Main Process Exception:', exception);
+  console.error('[FABRIC:DASHBOARD] Main Process Exception:', exception);
 }).then((output) => {
-  console.log('[PORTAL:FEED] Main Process Output:', output);
+  console.log('[FABRIC:DASHBOARD] Main Process Output:', output);
 });
