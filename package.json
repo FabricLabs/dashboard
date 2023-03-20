@@ -15,8 +15,7 @@
     "review:coverage": "npm run make:coverage && http-server -p 8000 reports/coverage",
     "serve": "http-server assets",
     "start": "node scripts/node.js",
-    "test": "mocha tests",
-    "watch": "rollup -c -w"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,7 @@
   },
   "homepage": "https://github.com/FabricLabs/fabric-dashboard#readme",
   "dependencies": {
-    "@fabric/core": "FabricLabs/fabric#feature/noise-channels",
+    "@fabric/core": "FabricLabs/fabric#feature/v0.1.0-RC1",
     "@fabric/http": "FabricLabs/fabric-http#feature/v0.1.0-RC1"
   },
   "devDependencies": {
