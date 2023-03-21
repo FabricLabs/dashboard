@@ -1,6 +1,10 @@
 'use strict';
 
+// Fabric Types
 const Service = require('@fabric/core/types/service');
+
+// Fabric HTTP
+const HTTPServer = require('@fabric/http/types/server');
 const Site = require('@fabric/http/types/site');
 
 /**
@@ -22,6 +26,7 @@ class Dashboard extends Service {
     }, this.settings, settings);
 
     this.site = new Site(this.settings.site);
+    this.http = new HTTPServer(this.settings.http);
 
     // Set local state
     this._state = {
@@ -30,6 +35,12 @@ class Dashboard extends Service {
     };
 
     // Ensure chainability
+    return this;
+  }
+
+  async start () {
+    this.site.start();
+    this.http.start();
     return this;
   }
 }

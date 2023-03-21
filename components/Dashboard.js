@@ -1,7 +1,7 @@
 const LIMIT_PER_PAGE = 3;
 
 import React from 'react';
-import '../styles/dashboard.css';
+// import '../styles/dashboard.css';
 // import '../libraries/fomantic/dist/semantic.css';
 
 import {
@@ -10,6 +10,8 @@ import {
   Header,
   Segment
 } from 'semantic-ui-react';
+
+// import FabricBridge from '@fabric/http/components/FabricBridge';
 
 // import d3 from 'd3';
 import * as Plot from '@observablehq/plot';
@@ -64,7 +66,18 @@ export default class Dashboard extends React.Component {
         <Segment>
           <Header>
             <h1>@fabric/dashboard</h1>
+            <p>General overview of the network.</p>
           </Header>
+          <Card.Group fluid>
+            <Card>
+              <Card.Content>
+                <Card.Header>Peers</Card.Header>
+              </Card.Content>
+              <Card.Content>
+                <Card.Header>Contracts</Card.Header>
+              </Card.Content>
+            </Card>
+          </Card.Group>
         </Segment>
         {/* <FabricBridge path="/" onChange={this._handleBridgeChange.bind(this)} host="localhost" port="3000" secure="false" /> */}
         {/* <Sample host="localhost" secure="false" port="3000" /> */}

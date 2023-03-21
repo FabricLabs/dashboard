@@ -1,13 +1,18 @@
 /**
  * Run the Dashboard service.
  */
-const Dashboard = require('../services/dashboard');
+
+// Fabric Types
 const Node = require('@fabric/core/types/node');
 
+// Dashboard
+const Dashboard = require('../services/dashboard');
 const settings = require('../settings/local');
 
+// Main Process
 async function main (input = {}) {
   const node = new Node({
+    peering: false,
     service: Dashboard,
     settings: input
   });
@@ -19,6 +24,7 @@ async function main (input = {}) {
   };
 }
 
+// Execute
 main(settings).catch((exception) => {
   console.error('[DASHBOARD:NODE]', 'Main Process Exception:', exception);
 }).then((output) => {
